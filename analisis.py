@@ -36,3 +36,15 @@ plt.scatter(df['Price'], df['Avg. Area Number of Rooms'])
 plt.xlabel('Precio de la vivienda')
 plt.ylabel('Número de habitaciones')
 plt.show()
+# relaciona precio y antiguedad
+plt.figure(figsize=(10,10))
+plt.scatter(df['Price'], df['Avg. Area House Age'])
+plt.xlabel('Precio de la vivienda')
+plt.ylabel('Edad')
+plt.show()
+# este print devuelve la antiguedad de la casa con mayor precio
+print("La antigüedad de la casa con mayor precio es: ", df['Avg. Area House Age'][df['Price'].idxmax()])
+# cree un dataframe con las casas con antiguedad menor que 3
+df2 = df[df['Avg. Area House Age'] < 3]
+# halla el precio medio de las casas con antiguedad menor que 3
+print("El precio medio de las casas con edad menor que 5 es: ", df2['Price'].mean())
