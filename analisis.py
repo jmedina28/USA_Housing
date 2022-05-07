@@ -44,6 +44,7 @@ plt.xlabel('Precio de la vivienda')
 plt.ylabel('Edad')
 plt.show()
 # este print devuelve la antiguedad de la casa con mayor precio
+print("="*100)
 print("La antigüedad de la casa con mayor precio es: ", df['Avg. Area House Age'][df['Price'].idxmax()], "\n")
 # obtengo df2 que contiene casas con antiguedad inferior a 6 años
 df2 = df[df['Avg. Area House Age'] < 6]
