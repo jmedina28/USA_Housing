@@ -38,11 +38,12 @@ print(df)
 print("Las columnas del dataset son :\n", df.columns)
 print("La descripción del dataset es la siguiente: \n", df.describe())
 
-# calcula la media , mediana, desviación estándar y el valor máximo y mínimo
+# calcula la media , mediana, desviación estándar, varianza y el valor máximo y mínimo
 def analisis(dataset,var):    
     print(f"La media de la columna {var} es: ", dataset[var].mean())
     print(f"La mediana de la columna {var} es: ", dataset[var].median())
     print(f"La desviación estándar de la columna {var} es: ", dataset[var].std())
+    print(f"La varianza de la columna {var} es: ", dataset[var].var())
     print(f"El valor máximo de la columna {var} es: ", dataset[var].max())
     print(f"El valor mínimo de la columna {var} es: ", dataset[var].min())
     print("\n")
@@ -73,6 +74,7 @@ plt.xlabel('Precio de la vivienda')
 plt.ylabel('Edad')
 plt.show()
 # este print devuelve la antiguedad de la casa con mayor precio
+print("="*100)
 print("La antigüedad de la casa con mayor precio es: ", df['Avg. Area House Age'][df['Price'].idxmax()], "\n")
 # obtengo df2 que contiene casas con antiguedad inferior a 6 años
 df2 = df[df['Avg. Area House Age'] < 6]
