@@ -24,3 +24,15 @@ for i in df.columns:
 # llamamos a analisis para cada columna
 for i in lista:
     analisis(i)
+# relacion entre precio e ingresos
+plt.figure(figsize=(10,10))
+plt.scatter(df['Price'], df['Avg. Area Income'])
+plt.xlabel('Precio de la vivienda')
+plt.ylabel('Ingreso medio del propietario')
+plt.show()
+# relacion entre precio y el numero de habitantes
+plt.figure(figsize=(10,10))
+plt.scatter(df['Price'], df['Avg. Area Number of Rooms'])
+plt.xlabel('Precio de la vivienda')
+plt.ylabel('Número de habitaciones')
+plt.show()
