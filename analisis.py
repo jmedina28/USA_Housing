@@ -8,9 +8,19 @@ print(df)
 print("Las columnas del dataset son :\n", df.columns)
 print("La descripción del dataset es la siguiente: \n", df.describe())
 
-def media(col):
-    return df[col].mean()
-def desviacion(col):
-    return df[col].std()
-def moda(col):
-    return df[col].mode()
+# calcula la media , mediana, desviación estándar y el valor máximo y mínimo
+def analisis(var):    
+    print(f"La media de la columna {var} es: ", df[var].mean())
+    print(f"La mediana de la columna {var} es: ", df[var].median())
+    print(f"La desviación estándar de la columna {var} es: ", df[var].std())
+    print(f"El valor máximo de la columna {var} es: ", df[var].max())
+    print(f"El valor mínimo de la columna {var} es: ", df[var].min())
+    print("\n")
+# extraemos una lista que contiene las columnas que vamos a analizar
+lista = []
+for i in df.columns:
+    if df[i].dtype == np.int64 or df[i].dtype == np.float64:
+        lista.append(i)
+# llamamos a analisis para cada columna
+for i in lista:
+    analisis(i)
